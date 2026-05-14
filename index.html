@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>RS TWEAKS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { background: rgb(0, 0, 0); color: #fff; font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; overflow-x: hidden; }
+        .rstweak-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 20px; }
+        .rstweak-profile-section { text-align: center; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; animation: fadeInDown 0.8s ease-out; }
+        .rstweak-profile-img { width: 125px; height: 125px; border-radius: 50%; object-fit: cover; border: 2px solid #2a2a2a; box-shadow: 0 0 30px rgba(0,0,0,0.7); margin-bottom: 16px; transition: transform 0.5s cubic-bezier(0.175,0.885,0.32,1.275); }
+        .rstweak-profile-img:hover { transform: scale(1.08) rotate(3deg); }
+        .rstweak-name { font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 8px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .rstweak-bio { color: #888; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+        .rstweak-links-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+        .rstweak-link-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: rgba(20,20,20,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; text-decoration: none; transition: all 0.3s; position: relative; overflow: hidden; opacity: 0; animation: slideInUp 0.6s forwards; }
+        .rstweak-link-item:hover { transform: translateY(-4px) scale(1.01); background: rgba(30,30,30,0.8); border-color: var(--accent-color); box-shadow: 0 8px 25px -5px var(--accent-glow); }
+        .rstweak-link-icon { width: 38px; height: 38px; min-width: 38px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border-radius: 10px; }
+        .rstweak-link-icon svg { width: 22px; height: 22px; }
+        .rstweak-link-content { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 10px; }
+        .rstweak-link-title { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.05rem; color: #fff; margin-bottom: 3px; }
+        .rstweak-link-subtitle { font-size: 0.8rem; color: #777; }
+        .rstweak-link-arrow { width: 20px; height: 20px; min-width: 20px; opacity: 0; transform: translateX(-10px); transition: all 0.3s; }
+        .rstweak-link-item:hover .rstweak-link-arrow { opacity: 0.5; transform: translateX(0); }
+        .rstweak-footer { margin-top: 50px; text-align: center; font-size: 0.75rem; color: #444; font-family: 'JetBrains Mono', monospace; }
+        .rstweak-link-item:nth-child(1){animation-delay:0.1s} .rstweak-link-item:nth-child(2){animation-delay:0.2s} .rstweak-link-item:nth-child(3){animation-delay:0.3s} .rstweak-link-item:nth-child(4){animation-delay:0.4s} .rstweak-link-item:nth-child(5){animation-delay:0.5s} .rstweak-link-item:nth-child(6){animation-delay:0.6s}
+        @keyframes slideInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeInDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+        @media (min-width:768px) { .rstweak-container { background:rgba(0,0,0,0.4); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:24px; border:1px solid rgba(255,255,255,0.1); box-shadow:0 20px 40px rgba(0,0,0,0.5); padding:60px 40px; } }
+        
+                    .rstweak-profile-img { border-color: #00fbff; box-shadow: 0 0 25px rgba(0,251,255,0.25); }
+                    
+                
+    </style>
+</head>
+<body>
+    
+                
+                <div class="rstweak-container">
+                    <div class="rstweak-profile-section">
+                        <img src="https://i.pinimg.com/736x/c2/91/a2/c291a2d59b07c04e42102f8d345630a9.jpg" class="rstweak-profile-img">
+                        <h1 class="rstweak-name">RS TWEAKS</h1>
+                        <p class="rstweak-bio">@RS | alsh3la</p>
+                    </div>
+                    <div class="rstweak-links-grid">
+                <a href="https://rs1.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #00fbff; --accent-glow: rgba(0, 251, 255, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#00fbff"><path d="M12 22a8.01 8.01 0 0 1-8-8a1 1 0 0 1 2 0a6 6 0 0 0 12 0a1 1 0 0 1 2 0a8.01 8.01 0 0 1-8 8 M12 22a1 1 0 0 1-1-1V7a1 1 0 0 1 2 0v14a1 1 0 0 1-1 1m-5-7H5a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2m12 0h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2 M14 11h-4a1 1 0 0 1 0-2h4a1 1 0 0 1 0 2m-2-3a3 3 0 1 1 3-3a3.003 3.003 0 0 1-3 3m0-4a1 1 0 1 0 1 1a1 1 0 0 0-1-1"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title"> RS Vault</span>
+                        <span class="rstweak-link-subtitle">Secure Storage</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://workplace-clipboard.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #008cff; --accent-glow: rgba(0, 140, 255, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#008cff"><path d="M8.354 4.25a2.75 2.75 0 0 1 2.646-2h2a2.75 2.75 0 0 1 2.646 2H17A2.75 2.75 0 0 1 19.75 7v12A2.75 2.75 0 0 1 17 21.75H7A2.75 2.75 0 0 1 4.25 19V7A2.75 2.75 0 0 1 7 4.25zM11 3.75c-.69 0-1.25.56-1.25 1.25v1.25h4.5V5c0-.69-.56-1.25-1.25-1.25z"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">RS Toolkit</span>
+                        <span class="rstweak-link-subtitle">Utilities Collection</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://wifi-bridge.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #00ffaa; --accent-glow: rgba(0, 255, 170, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#00ffaa"><path d="M18.918 17.48c-.126 2.727-2.384 4.696-5.364 4.696H7.34v-6.123l-2.185-.957V24h8.381c4.334 0 7.549-2.962 7.549-6.881v-.163c-.65.235-1.372.415-2.167.524m1.355-9.501C18.611 4.313 17.726.989 15.432.213c-1.336-.452-2.005-.091-2.637.217a.306.306 0 0 0-.072.505c.361.307.813.687 1.336 1.174c-1.95-1.138-7.333-2.835-7.874-.776c-.488 1.86-1.319 4.587-1.319 4.587S.603 5.487.116 7.293s3.323 5.274 9.627 7.134c6.303 1.861 11.198 1.373 13.311-.921s.072-5.473-2.781-5.527m-1.247.036c-.487.47-2.077 1.68-5.563 1.427c-3.738-.271-6.809-2.474-7.604-3.088a.34.34 0 0 1-.126-.398c.054-.18.126-.469.253-.849c.072-.234.343-.343.542-.216c1.571.903 4.1 2.221 6.791 2.402c2.402.163 3.847-.542 4.786-1.066a.39.39 0 0 1 .542.199l.47 1.156c.036.162.018.325-.091.433"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">CyberBridge</span>
+                        <span class="rstweak-link-subtitle">Network Tools</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://rs5.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #aa00ff; --accent-glow: rgba(170, 0, 255, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#aa00ff"><path d="M7 18a1 1 0 0 1-.707-1.707l10-10a1 1 0 0 1 1.414 1.414l-10 10A1 1 0 0 1 7 18 M17 18a1 1 0 0 1-.707-.293l-10-10a1 1 0 0 1 1.414-1.414l10 10A1 1 0 0 1 17 18"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">RS SETUP</span>
+                        <span class="rstweak-link-subtitle">Configuration Hub</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://rs.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #ffaa00; --accent-glow: rgba(255, 170, 0, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#ffaa00"><path d="M9 7a3 3 0 1 1 6 0v2h2V7A5 5 0 0 0 7 7v2h2zm3 11a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1 M17 9H7a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3m-4 8a1 1 0 0 1-2 0v-3a1 1 0 1 1 2 0z"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">GPC Obfuscator</span>
+                        <span class="rstweak-link-subtitle">Code Security</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://notes-app-1te.pages.dev/" class="rstweak-link-item" style="--accent-color: #ff008c; --accent-glow: rgba(255, 0, 140, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#ff008c"><path d="M3 10h18v10.004c0 .55-.445.996-.993.996H3.993A.994.994 0 0 1 3 20.004zm6 2v2h6v-2zM2 4c0-.552.455-1 .992-1h18.016c.548 0 .992.444.992 1v4H2z"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">Note APP</span>
+                        <span class="rstweak-link-subtitle">Quick Notes</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://srt.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #00fbff; --accent-glow: rgba(0, 251, 255, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#00fbff"><path d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">SRT</span>
+                        <span class="rstweak-link-subtitle">SRT TRANSLATOR</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a>
+                <a href="https://gen.alsh3la991.workers.dev/" class="rstweak-link-item" style="--accent-color: #008cff; --accent-glow: rgba(0, 140, 255, 0.4); border-radius: 12px; margin-bottom: 16px;">
+                    <div class="rstweak-link-icon">
+                        <svg viewBox="0 0 24 24" fill="#008cff"><path d="M11.097 1.515a.75.75 0 0 1 .589.882L10.666 7.5h4.47l1.079-5.397a.75.75 0 1 1 1.47.294L16.665 7.5h3.585a.75.75 0 0 1 0 1.5h-3.885l-1.2 6h3.585a.75.75 0 0 1 0 1.5h-3.885l-1.08 5.397a.75.75 0 1 1-1.47-.294l1.02-5.103h-4.47l-1.08 5.397a.75.75 0 1 1-1.47-.294l1.02-5.103H3.75a.75.75 0 0 1 0-1.5h3.885l1.2-6H5.25a.75.75 0 0 1 0-1.5h3.885l1.08-5.397a.75.75 0 0 1 .882-.588ZM10.365 9l-1.2 6h4.47l1.2-6h-4.47Z
+"></path></svg>
+                    </div>
+                    <div class="rstweak-link-content">
+                        <span class="rstweak-link-title">IconGen</span>
+                        <span class="rstweak-link-subtitle">IOS ICON GEN</span>
+                    </div>
+                    <div class="rstweak-link-arrow">
+                        <svg viewBox="0 0 24 24" fill="#fff"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+                    </div>
+                </a></div>
+                    <div class="rstweak-footer">© 2026 RS TWEAKS • OLED EDITION</div>
+                </div>
+</body>
+</html>
